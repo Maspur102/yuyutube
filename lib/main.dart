@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'utils/constants.dart';
 import 'screens/home_screen.dart';
 
 void main() {
@@ -12,13 +13,18 @@ class YuyuTubeApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'YuyuTube',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        useMaterial3: true,
         brightness: Brightness.dark,
-        primarySwatch: Colors.red,
-        scaffoldBackgroundColor: Colors.black,
+        scaffoldBackgroundColor: Constants.bgColor,
+        colorScheme: const ColorScheme.dark(
+          primary: Constants.primaryColor,
+          surface: Constants.cardColor,
+        ),
+        fontFamily: 'Roboto',
       ),
       home: const HomeScreen(),
-      debugShowCheckedModeBanner: false,
     );
   }
 }
